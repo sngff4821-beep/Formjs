@@ -1,119 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bootstrap Calculator</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    .calculator {
+      max-width: 250px;
+      margin: 50px auto;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    }
+    .btn-calculator {
+      width: 100%;
+      margin: 5px 0;
+      font-size: 1.2rem;
+    }
+    input {
+      text-align: right;
+      font-size: 2rem;
+    }
+  </style>
 </head>
-<style>
-    .form {
-        padding-top: 30px;
-        padding-left: 45px;
-        padding-bottom: 70px;
-        width: 210px;
-        background-color: rgb(158, 223, 223);
-        box-shadow: 4px 4px 12px rgb(83, 77, 77), -4px -4px 12px rgb(213, 205, 205);
-        height: 250px;
-        border-radius: 12px;
-        font-weight: 300;
-        margin: auto;
-        margin-top: 200px;
-        margin-bottom: 30px;
-    }
-
-    .submit {
-        width: 170px;
-        height: 30px;
-        background-color: rgb(122, 122, 212);
-        border-radius: 12px;
-        box-shadow: 4px 4px 8px rgb(83, 77, 77), -4px -4px 8px rgb(213, 205, 205);
-
-    }
-
-    .submit:hover {
-        background-color: azure;
-    }
-
-    #resutl {
-        justify-content: center;
-        display: flex;
-        align-items: center;
-    }
-
-    span {
-        font-weight: 100;
-        color: rgb(227, 151, 151);
-    }
-</style>
-
 <body>
-    <form class="form">
-        <label for="">UserName</label>
-        <input type="text" name="" id="name" placeholder="Enter your name"> <br>
-        <span id="nameErorr"></span> <br>
 
-        <label for="">Email</label>
-        <input type="text" name="" id="email" placeholder="Enter your email"><br>
-        <span id="emailErorr"></span><br>
-        <label for="">Password</label>
-        <input type="password" name="" id="psw" placeholder="Enter password"><br>
-        <span id="pswErorr"></span><br>
-        <label for="">Comfirm password</label>
-        <input type="text" name="" id="cpsw" placeholder="Comfirm password">
-        <span id="cpswErorr"></span>
-        <br> <br>
-        <button type="button" class="submit" id="submit">Submit</button>
 
-    </form>
-    <div id="resutl"></div>
+<div class="calculator bg-light p-3">
+  <h4> Casio </h4>
+  <input type="text" id="display" class="form-control m-1" >
+  <div class="row">
+    <div class="col-3"><button class="btn btn-secondary btn-calculator" onclick="appendValue('7')">7</button></div>
+    <div class="col-3"><button class="btn btn-secondary btn-calculator" onclick="appendValue('8')">8</button></div>
+    <div class="col-3"><button class="btn btn-secondary btn-calculator" onclick="appendValue('9')">9</button></div>
+    <div class="col-3"><button class="btn btn-warning btn-calculator" onclick="appendValue('/')">/</button></div>
 
-    <script>
-        document.getElementById("submit").addEventListener("click", function () {
-            document.getElementById("nameErorr").innerText = "";
-            document.getElementById("emailErorr").innerText = "";
-            document.getElementById("pswErorr").innerText = "";
-            document.getElementById("cpswErorr").innerText = "";
-            document.getElementById("resutl").innerHTML = "";
-            let name = document.getElementById("name").value.trim();
-            let email = document.getElementById("email").value.trim();
-            let psw = document.getElementById("psw").value.trim();
-            let cpsw = document.getElementById("cpsw").value.trim();
-            let resutl = document.getElementById("resutl");
+    <div class="col-3"><button class="btn btn-secondary btn-calculator" onclick="appendValue('4')">4</button></div>
+    <div class="col-3"><button class="btn btn-secondary btn-calculator" onclick="appendValue('5')">5</button></div>
+    <div class="col-3"><button class="btn btn-secondary btn-calculator" onclick="appendValue('6')">6</button></div>
+    <div class="col-3"><button class="btn btn-warning btn-calculator" onclick="appendValue('*')">*</button></div>
 
-            let nameErorr = document.getElementById("nameErorr");
-            let emailErorr = document.getElementById("emailErorr")
-            let pswErorr = document.getElementById("pswErorr")
-            let cpswErorr = document.getElementById("cpswErorr")
-            let check = true;
-            if (name == "") {
-                nameErorr.innerText = "Invalid name";
-                check = false
-            }
-            if (email == "") {
-                emailErorr.innerText = "Invalid Email";
-                check = false
-            }
-            if (psw == "") {
-                pswErorr.innerText = "Invalid Password";
-                check = false
-            }
-            if (cpsw == "") {
-                cpswErorr.innerHTML = "invalid comfirm Password"
-                check = false
-            }
-            if (psw != cpsw) {
-                cpswErorr.innerHTML = "Comfrim password Uncorrectly "
-                check = false
-            }
+    <div class="col-3"><button class="btn btn-secondary btn-calculator" onclick="appendValue('1')">1</button></div>
+    <div class="col-3"><button class="btn btn-secondary btn-calculator" onclick="appendValue('2')">2</button></div>
+    <div class="col-3"><button class="btn btn-secondary btn-calculator" onclick="appendValue('3')">3</button></div>
+    <div class="col-3"><button class="btn btn-warning btn-calculator" onclick="appendValue('-')">-</button></div>
 
-            if (check) {
-                resutl.innerHTML = "Name :" + name + "<br>" + "Email :" + email + "<br>" + "Passworld :" + psw + "<br>" + "comfrim passworld:" + cpsw;
-            }
-        })
+    <div class="col-3"><button class="btn btn-secondary btn-calculator" onclick="appendValue('0')">0</button></div>
+    <div class="col-3"><button class="btn btn-secondary btn-calculator" onclick="appendValue('.')">.</button></div>
+    <div class="col-3"><button class="btn btn-success btn-calculator" onclick="calculate()">=</button></div>
+    <div class="col-3"><button class="btn btn-warning btn-calculator" onclick="appendValue('+')">+</button></div>
 
-    </script>
+    <div class="col-12"><button class="btn btn-danger btn-calculator" onclick="clearDisplay()">C</button></div>
+  </div>
+</div>
+
+<!-- JavaScript -->
+<script>
+  const display = document.getElementById('display');
+
+  function appendValue(Number) {
+    display.value += Number;
+  }
+
+  function clearDisplay() {
+    display.value = '';
+  }
+
+  function calculate() {
+    try {
+      display.value = eval(display.value);
+    } catch {
+      display.value = 'Error';         
+    }
+  }
+</script>
 
 </body>
-
 </html>
+
