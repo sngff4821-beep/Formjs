@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 1.can change content -->
+     <input type="button" value="clickme" onclick="kalert()">
+     <!-- 2.change  content -->
+      <p id="first">Hell GUY !</p>
+      <input type="button" value="click" onclick="move()">
+      <!-- change color  -->
+       <p id="oldstyle">This is not style</p>
+       <input type="button" value="clickchangestyle" onclick="changestyle()"> 
+       <br><br>
+       <!-- show and hide -->
+        <img src="./WIN_20251230_08_45_33_Pro.jpg" alt="" id="img" width="200px" height="200px" onmouseover="change()">
+        <br>
+        <button  onclick="hide()">Hide IMG</button>
+        <button onclick="show()">show</button>
+     <script>
+         <!-- 1.can change content -->
+        function kalert(){
+            alert("Hi Javascript");
+        }
+        function move(){
+            document.getElementById("first").innerText="HELLO JAVA_Script"
+        }
+        function changestyle(){
+            document.getElementById("oldstyle").style.color="red"
+            document.getElementById("oldstyle").style.backgroundColor="blue"
+        }
+        function hide(){
+            document.getElementById("img").style.display="none";
+        }
+        function show(){
+            document.getElementById("img").style.display="block";
+        }
+        function change(){
+            document.getElementById("img").setAttribute("src","./photo_2026-01-04_19-54-29.jpg")
+        }
+     </script>
+
+    
+</body>
+</html>

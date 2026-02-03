@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+               let object={
+        name:"Chhen chhoueng",
+        age:15,Gender:"Male"
+       }
+       for(let key in object){
+        document.writeln("key:"+key+"value:"+" "+object[key]+"<br>")
+       }
+       // for of
+       let object1=[112,123,2355];
+       for(index of object1){
+        document.writeln(index);
+       }
+       //for each 
+       let object3=[12,22,222,222,222,56565,565];
+       object3.forEach((value ,index)=>{
+        document.writeln(index+":"+value+"<br>")
+       });  
+    </script>
+</body>
+</html>

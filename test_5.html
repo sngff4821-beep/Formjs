@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let title=document.createElement("h1");
+        title.textContent="Hover Color !";
+        title.style.textAlign="center"
+        title.style.padding="30px"
+        document.body.append(title)
+        title.addEventListener("mouseover",function(){
+            title.style.backgroundColor="red";
+        });
+        title.addEventListener("mouseleave",function(){
+            title.style.backgroundColor="";
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MouseOver</title>
+</head>
+<body>
+    <script>
+        let name=document.createElement("h1");
+        name.style.color="red";
+        name.textContent="Hello world"
+        name.style.textAlign="center"
+        document.body.append(name)
+        name.addEventListener("mouseover",function(){
+            name.style.backgroundColor="red";;
+        })
+        name.addEventListener("mouseout",function(){
+            name.style.backgroundColor="";
+        })
+    </script>
+</body>
+</html>

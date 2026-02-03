@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- chenge text  -->
+     <p id="f_text">My firstName</p>
+     <button onclick="change()">Click Change</button>
+     <!-- change style  -->
+      <p id="N_color">My name is chhen chhoeung </p>
+      <button onclick="changcecolor()">Changecolor</button>
+      <br>
+      <!-- chagce img by get attribue -->
+       <img src="./WIN_20251230_08_45_33_Pro.jpg" alt="" id="img" onclick="chagceimg()" width="200px" height="200px">
+       <!-- show ahd hide  -->
+        <div id="box" style="text-align: center; width:200px; height:200px; background-color:bisque;">1</div>
+       <button onclick="hide_1()">Hide</button>
+       <button onclick="show_1()">show</button>
+        
+     <script>
+        let check=true;
+        let check_1=true;
+        function change(){
+           if(check==true){
+            document.getElementById("f_text").innerText="My last Name ! after changce "
+            check=false;
+           }else{
+            document.getElementById("f_text").innerText="My firstName"
+            check=true;
+           }
+        }
+
+        function changcecolor(){
+            if(check_1==true){
+                document.getElementById("N_color").style.color="blue";
+                 document.getElementById("N_color").style.backgroundColor="red";
+                 check_1=false; 
+            }else{
+                document.getElementById("N_color").style="" ;
+                check_1=true;
+            }
+        }
+        let check_2=true
+        function chagceimg(){
+            if(check_2==true){
+                document.getElementById("img").setAttribute("src","./photo_2026-01-04_19-54-29.jpg");
+                check_2=false;
+            }else{
+                document.getElementById("img").setAttribute("src","./WIN_20251230_08_45_33_Pro.jpg");
+                check_2=true;
+            }
+        }
+
+        function hide_1(){
+            document.getElementById("box").style.display="none"
+        }
+        function show_1(){
+            document.getElementById("box").style.display="block"
+        }
+     </script>
+</body>
+</html>

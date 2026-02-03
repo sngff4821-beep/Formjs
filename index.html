@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .form {
+        padding-top: 30px;
+        padding-left: 45px;
+        padding-bottom: 70px;
+        width: 210px;
+        background-color: rgb(158, 223, 223);
+        box-shadow: 4px 4px 12px rgb(83, 77, 77), -4px -4px 12px rgb(213, 205, 205);
+        height: 250px;
+        border-radius: 12px;
+        font-weight: 300;
+        margin: auto;
+        margin-top: 200px;
+        margin-bottom: 30px;
+    }
+
+    .submit {
+        width: 170px;
+        height: 30px;
+        background-color: rgb(122, 122, 212);
+        border-radius: 12px;
+        box-shadow: 4px 4px 8px rgb(83, 77, 77), -4px -4px 8px rgb(213, 205, 205);
+
+    }
+
+    .submit:hover {
+        background-color: azure;
+    }
+
+    #resutl {
+        justify-content: center;
+        display: flex;
+        align-items: center;
+    }
+
+    span {
+        font-weight: 100;
+        color: rgb(227, 151, 151);
+    }
+</style>
+
+<body>
+    <form class="form">
+        <label for="">UserName</label>
+        <input type="text" name="" id="name" placeholder="Enter your name"> <br>
+        <span id="nameErorr"></span> <br>
+
+        <label for="">Email</label>
+        <input type="text" name="" id="email" placeholder="Enter your email"><br>
+        <span id="emailErorr"></span><br>
+        <label for="">Password</label>
+        <input type="password" name="" id="psw" placeholder="Enter password"><br>
+        <span id="pswErorr"></span><br>
+        <label for="">Comfirm password</label>
+        <input type="text" name="" id="cpsw" placeholder="Comfirm password">
+        <span id="cpswErorr"></span>
+        <br> <br>
+        <button type="button" class="submit" id="submit">Submit</button>
+
+    </form>
+    <div id="resutl"></div>
+
+    <script>
+        document.getElementById("submit").addEventListener("click", function () {
+            document.getElementById("nameErorr").innerText = "";
+            document.getElementById("emailErorr").innerText = "";
+            document.getElementById("pswErorr").innerText = "";
+            document.getElementById("cpswErorr").innerText = "";
+            document.getElementById("resutl").innerHTML = "";
+            let name = document.getElementById("name").value.trim();
+            let email = document.getElementById("email").value.trim();
+            let psw = document.getElementById("psw").value.trim();
+            let cpsw = document.getElementById("cpsw").value.trim();
+            let resutl = document.getElementById("resutl");
+
+            let nameErorr = document.getElementById("nameErorr");
+            let emailErorr = document.getElementById("emailErorr")
+            let pswErorr = document.getElementById("pswErorr")
+            let cpswErorr = document.getElementById("cpswErorr")
+            let check = true;
+            if (name == "") {
+                nameErorr.innerText = "Invalid name";
+                check = false
+            }
+            if (email == "") {
+                emailErorr.innerText = "Invalid Email";
+                check = false
+            }
+            if (psw == "") {
+                pswErorr.innerText = "Invalid Password";
+                check = false
+            }
+            if (cpsw == "") {
+                cpswErorr.innerHTML = "invalid comfirm Password"
+                check = false
+            }
+            if (psw != cpsw) {
+                cpswErorr.innerHTML = "Comfrim password Uncorrectly "
+                check = false
+            }
+
+            if (check) {
+                resutl.innerHTML = "Name :" + name + "<br>" + "Email :" + email + "<br>" + "Passworld :" + psw + "<br>" + "comfrim passworld:" + cpsw;
+            }
+        })
+
+    </script>
+
+</body>
+
+</html>
